@@ -14,6 +14,9 @@
 		0015DCF829F0F0A8001B5259 /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0015DCF629F0F0A8001B5259 /* VisualEffectBlur.swift */; };
 		0015DCF929F0F0A8001B5259 /* AccountBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0015DCF729F0F0A8001B5259 /* AccountBackground.swift */; };
 		0015DCFB29F0F1AB001B5259 /* TrackableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0015DCFA29F0F1AB001B5259 /* TrackableScrollView.swift */; };
+		00A7E83629F3B2270035A6BC /* CertificateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A7E83529F3B2270035A6BC /* CertificateViewModel.swift */; };
+		00A7E83829F3B6480035A6BC /* CertificatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A7E83729F3B6480035A6BC /* CertificatesView.swift */; };
+		00A7E83B29F3BCD90035A6BC /* CertificateCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A7E83A29F3BCD90035A6BC /* CertificateCard.swift */; };
 		00DA588429F2F66B00DD13E7 /* MenuRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DA588329F2F66B00DD13E7 /* MenuRow.swift */; };
 		00DA588629F2F79300DD13E7 /* GradientIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DA588529F2F79300DD13E7 /* GradientIcon.swift */; };
 		00DA588829F2FB2A00DD13E7 /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DA588729F2FB2A00DD13E7 /* FAQView.swift */; };
@@ -42,6 +45,9 @@
 		0015DCF629F0F0A8001B5259 /* VisualEffectBlur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
 		0015DCF729F0F0A8001B5259 /* AccountBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBackground.swift; sourceTree = "<group>"; };
 		0015DCFA29F0F1AB001B5259 /* TrackableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackableScrollView.swift; sourceTree = "<group>"; };
+		00A7E83529F3B2270035A6BC /* CertificateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificateViewModel.swift; sourceTree = "<group>"; };
+		00A7E83729F3B6480035A6BC /* CertificatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificatesView.swift; sourceTree = "<group>"; };
+		00A7E83A29F3BCD90035A6BC /* CertificateCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificateCard.swift; sourceTree = "<group>"; };
 		00DA588329F2F66B00DD13E7 /* MenuRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRow.swift; sourceTree = "<group>"; };
 		00DA588529F2F79300DD13E7 /* GradientIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientIcon.swift; sourceTree = "<group>"; };
 		00DA588729F2FB2A00DD13E7 /* FAQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
@@ -94,6 +100,7 @@
 				00DA589729F3036C00DD13E7 /* Resources */,
 				0015DCE729F0F030001B5259 /* SwiftUICombineAndDataApp.swift */,
 				0015DCE929F0F030001B5259 /* ContentView.swift */,
+				00A7E83429F3B20B0035A6BC /* ViewModels */,
 				00DA589029F2FCBD00DD13E7 /* Models */,
 				00DA588F29F2FB8A00DD13E7 /* Components */,
 				00DA588E29F2FB8300DD13E7 /* Utils */,
@@ -124,11 +131,28 @@
 			path = Graphics;
 			sourceTree = "<group>";
 		};
+		00A7E83429F3B20B0035A6BC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				00A7E83529F3B2270035A6BC /* CertificateViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		00A7E83929F3BCD00035A6BC /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				00A7E83A29F3BCD90035A6BC /* CertificateCard.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
 		00DA588B29F2FB4300DD13E7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				00DA588729F2FB2A00DD13E7 /* FAQView.swift */,
 				00DA588929F2FB3500DD13E7 /* PackagesView.swift */,
+				00A7E83729F3B6480035A6BC /* CertificatesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -163,6 +187,7 @@
 		00DA588F29F2FB8A00DD13E7 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				00A7E83929F3BCD00035A6BC /* Cards */,
 				00DA588D29F2FB6100DD13E7 /* Other */,
 				00DA588C29F2FB5800DD13E7 /* Rows */,
 				00DA58A029F3054200DD13E7 /* Buttons */,
@@ -286,6 +311,8 @@
 				00DA588829F2FB2A00DD13E7 /* FAQView.swift in Sources */,
 				00DA588A29F2FB3500DD13E7 /* PackagesView.swift in Sources */,
 				00DA588629F2F79300DD13E7 /* GradientIcon.swift in Sources */,
+				00A7E83629F3B2270035A6BC /* CertificateViewModel.swift in Sources */,
+				00A7E83B29F3BCD90035A6BC /* CertificateCard.swift in Sources */,
 				00DA58A429F307EB00DD13E7 /* ProfileRow.swift in Sources */,
 				00DA589229F2FCC600DD13E7 /* Package.swift in Sources */,
 				00DA589629F3031D00DD13E7 /* FAQ.swift in Sources */,
@@ -293,6 +320,7 @@
 				0015DCE829F0F030001B5259 /* SwiftUICombineAndDataApp.swift in Sources */,
 				00DA589F29F3053500DD13E7 /* PrimaryButton.swift in Sources */,
 				0015DCF929F0F0A8001B5259 /* AccountBackground.swift in Sources */,
+				00A7E83829F3B6480035A6BC /* CertificatesView.swift in Sources */,
 				00DA588429F2F66B00DD13E7 /* MenuRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
