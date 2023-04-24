@@ -34,6 +34,14 @@ extension View {
             )
             .mask(RoundedRectangle(cornerRadius: 20, style: .continuous))
     }
+    
+    @ViewBuilder func `if`<Content: View>(_ condition: Bool, transform: (Self) -> Content) -> some View { // allows to build views from closure
+        if condition {
+            transform(self)
+        } else {
+            self
+        }
+    }
 }
 
 extension Date {

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ProfileRow: View {
+    @AppStorage("isLiteMode") var isLiteMode: Bool = false
+    
     var body: some View {
         HStack(alignment: .center, spacing: 16.0) {
             profilePicture
@@ -38,7 +40,9 @@ struct ProfileRow: View {
                 .font(.system(size: 66))
                 .angularGradientGlow(colors: [Color(#colorLiteral(red: 0.2274509804, green: 0.4, blue: 1, alpha: 1)), Color(#colorLiteral(red: 0.2156862745, green: 1, blue: 0.6235294118, alpha: 1)), Color(#colorLiteral(red: 1, green: 0.9176470588, blue: 0.1960784314, alpha: 1)), Color(#colorLiteral(red: 1, green: 0.2039215686, blue: 0.2745098039, alpha: 1))])
                 .frame(width: 66, height: 66)
-                .blur(radius: 10)
+                .if(!isLiteMode, transform: { view in
+                    view.blur(radius: 10)
+                })
 
             VStack {
                 Image("Profile")
@@ -57,10 +61,12 @@ struct ProfileRow: View {
     
     var glowIcon: some View {
         ZStack {
-            AngularGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.3960784314, green: 0.5254901961, blue: 1, alpha: 1)), Color(#colorLiteral(red: 1, green: 0.2509803922, blue: 0.3137254902, alpha: 1)), Color(#colorLiteral(red: 0.4274509804, green: 1, blue: 0.7254901961, alpha: 1)), Color(#colorLiteral(red: 0.4274509804, green: 1, blue: 0.7254901961, alpha: 1))]), center: .center, startAngle: .init(degrees: -190), endAngle: .degrees(155))
-                .blur(radius: 8)
-                .shadow(radius: 30)
-                .frame(width: 36, height: 36)
+            if !isLiteMode {
+                AngularGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.3960784314, green: 0.5254901961, blue: 1, alpha: 1)), Color(#colorLiteral(red: 1, green: 0.2509803922, blue: 0.3137254902, alpha: 1)), Color(#colorLiteral(red: 0.4274509804, green: 1, blue: 0.7254901961, alpha: 1)), Color(#colorLiteral(red: 0.4274509804, green: 1, blue: 0.7254901961, alpha: 1))]), center: .center, startAngle: .init(degrees: -190), endAngle: .degrees(155))
+                    .blur(radius: 8)
+                    .shadow(radius: 30)
+                    .frame(width: 36, height: 36)
+            }
 
             Image(systemName: "square.stack.fill")
                 .linearGradientBackground(colors: [Color(#colorLiteral(red: 0.6196078431, green: 0.6784313725, blue: 1, alpha: 1)), Color(#colorLiteral(red: 1, green: 0.5607843137, blue: 0.9803921569, alpha: 1))])
